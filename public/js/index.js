@@ -237,7 +237,6 @@ document.getElementById("revealButton").addEventListener("click", revealShips);
 
 // add event listener to reset button
 document.getElementById("resetButton").addEventListener("click", resetGame);
-document.getElementById("revealButton").addEventListener("click", revealShips);
 
 // initialize game board
 resetGame();
