@@ -2,11 +2,12 @@
 var rows = 10;
 var cols = 10;
 var squareSize = 50;
+var hitCount = 0;
+var gameBoard;
 
 // create the 2d array that will contain the status of each square on the board
 // and place ships on the board (later, create function for random placement!)
 // 0 = empty, 1 = part of a ship, 2 = a sunken part of a ship, 3 = a missed shot
-var gameBoard;
 
 // get the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -79,8 +80,6 @@ function createBoard() {
 //    Destroyer   - 3 hits
 //    Submarine   - 3 hits
 //    Patrol Boat - 2 hits
-
-var hitCount = 0;
 
 function randomizeBoard() {
   gameBoard = Array.from({ length: rows }, () => Array(cols).fill(0));
