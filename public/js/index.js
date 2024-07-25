@@ -14,13 +14,6 @@ var gameBoardContainer = document.getElementById("gameboard");
 
 // make the grid columns and rows
 function createBoard() {
-  gameBoardContainer.innerHTML = ""; // clear previous board
-
-  var squares = document.querySelectorAll("#gameboard div");
-  squares.forEach((square) => {
-    square.innerHTML = "";
-  });
-
   // Create and add column labels (letters)
   for (var i = 0; i < cols; i++) {
     var columnLabel = document.createElement("div");
@@ -194,6 +187,13 @@ function fireTorpedo(e) {
 // reset game board
 function resetGame() {
   hitCount = 0;
+  gameBoardContainer.innerHTML = ""; // clear previous board
+
+  var squares = document.querySelectorAll("#gameboard div");
+  squares.forEach((square) => {
+    square.innerHTML = "";
+  });
+  
   randomizeBoard();
   createBoard();
 }
