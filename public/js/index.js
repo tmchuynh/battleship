@@ -202,6 +202,7 @@ function revealShips() {
   var squares = document.querySelectorAll("#gameboard div");
 
   squares.forEach(function (square) {
+    square.classList.add("disabled");
     var id = square.id;
 
     if (id) {
