@@ -4,6 +4,8 @@ var cols = 10;
 var squareSize = 50;
 var hitCount = 0;
 var gameBoard;
+let totalSize = 0;
+
 
 // create the 2d array that will contain the status of each square on the board
 // and place ships on the board (later, create function for random placement!)
@@ -67,13 +69,6 @@ function createBoard() {
   }
 }
 
-// there are 17 hits to be made in order to win the game:
-//    Carrier     - 5 hits
-//    Battleship  - 4 hits
-//    Destroyer   - 3 hits
-//    Submarine   - 3 hits
-//    Patrol Boat - 2 hits
-
 function randomizeBoard() {
   gameBoard = Array.from({ length: rows }, () => Array(cols).fill(0));
 
@@ -84,6 +79,12 @@ function randomizeBoard() {
     { size: 3, name: "Submarine" },
     { size: 2, name: "Patrol Boat" }
   ];
+
+  for (let i = 0; i < ships.length; i++) {
+    let obj: { [key: string]: string } = ships[i];
+    let res: string = obj['size'];
+    totalSize += res;
+  }
 
   ships.forEach((ship) => {
     placeShip(ship.size);
@@ -171,8 +172,15 @@ function fireTorpedo(e) {
 
       // increment hitCount each time a ship is hit
       hitCount++;
-      // this definitely shouldn't be hard-coded, but here it is anyway. lazy, simple solution:
-      if (hitCount == 17) {
+
+      // there are 17 hits to be made in order to win the game:
+      //    Carrier     - 5 hits
+      //    Battleship  - 4 hits
+      //    Destroyer   - 3 hits
+      //    Submarine   - 3 hits
+      //    Patrol Boat - 2 hits
+
+      if (hitCount == totalSize) {
         alert("All enemy battleships have been defeated! You win!");
       }
 
