@@ -81,8 +81,7 @@ function randomizeBoard() {
   ];
 
   for (let i = 0; i < ships.length; i++) {
-    let obj: { [key: string]: string } = ships[i];
-    let res: string = obj['size'];
+    let res = ships[i]['size'];
     totalSize += res;
   }
 
