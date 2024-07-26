@@ -6,7 +6,6 @@ var hitCount = 0;
 var gameBoard;
 let totalSize = 0;
 
-
 // create the 2d array that will contain the status of each square on the board
 // and place ships on the board (later, create function for random placement!)
 // 0 = empty, 1 = part of a ship, 2 = a sunken part of a ship, 3 = a missed shot
@@ -80,8 +79,15 @@ function randomizeBoard() {
     { size: 2, name: "Patrol Boat" }
   ];
 
+  // there are 17 hits to be made in order to win the game:
+  //    Carrier     - 5 hits
+  //    Battleship  - 4 hits
+  //    Destroyer   - 3 hits
+  //    Submarine   - 3 hits
+  //    Patrol Boat - 2 hits
+
   for (let i = 0; i < ships.length; i++) {
-    let res = ships[i]['size'];
+    let res = ships[i]["size"];
     totalSize += res;
   }
 
@@ -171,13 +177,6 @@ function fireTorpedo(e) {
 
       // increment hitCount each time a ship is hit
       hitCount++;
-
-      // there are 17 hits to be made in order to win the game:
-      //    Carrier     - 5 hits
-      //    Battleship  - 4 hits
-      //    Destroyer   - 3 hits
-      //    Submarine   - 3 hits
-      //    Patrol Boat - 2 hits
 
       if (hitCount == totalSize) {
         alert("All enemy battleships have been defeated! You win!");
