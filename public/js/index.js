@@ -6,10 +6,6 @@ var hitCount = 0;
 var gameBoard;
 let totalSize = 0;
 
-// create the 2d array that will contain the status of each square on the board
-// and place ships on the board (later, create function for random placement!)
-// 0 = empty, 1 = part of a ship, 2 = a sunken part of a ship, 3 = a missed shot
-
 // get the container element
 var gameBoardContainer = document.getElementById("gameboard");
 
@@ -48,7 +44,6 @@ function createBoard() {
     for (var j = 0; j < rows; j++) {
       // create a new div HTML element for each grid square and make it the right size
       var square = document.createElement("div");
-      gameBoardContainer.appendChild(square);
 
       // give each div element a unique id based on its row and column, like "s00"
       square.id = "s" + j + i;
@@ -64,6 +59,8 @@ function createBoard() {
       square.style.width = squareSize + "px";
       square.style.height = squareSize + "px";
       square.style.border = "1px solid #000"; // Add border to squares
+
+      gameBoardContainer.appendChild(square);
     }
   }
 }
@@ -95,6 +92,10 @@ function randomizeBoard() {
     placeShip(ship.size);
   });
 }
+
+// create the 2d array that will contain the status of each square on the board
+// and place ships on the board (later, create function for random placement!)
+// 0 = empty, 1 = part of a ship, 2 = a sunken part of a ship, 3 = a missed shot
 
 function placeShip(size) {
   var placed = false;
