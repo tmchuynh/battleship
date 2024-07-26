@@ -193,7 +193,7 @@ function resetGame() {
   squares.forEach((square) => {
     square.innerHTML = "";
   });
-  
+
   randomizeBoard();
   createBoard();
 }
