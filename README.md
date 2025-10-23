@@ -9,13 +9,13 @@
 <h1 align="center">Projects</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/tmchuynh/projects?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/tmchuynh/battleship?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/tmchuynh/projects?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/tmchuynh/battleship?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tmchuynh/projects?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tmchuynh/battleship?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/tmchuynh/projects?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/tmchuynh/battleship?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/tmchuynh/projects?color=56BEB8" /> -->
 
